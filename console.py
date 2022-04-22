@@ -15,3 +15,15 @@ import repositories.city_repository as city_repository
 
 from models.country import Country
 import repositories.country_repository as country_repository
+
+city1 = City("Hangzhou", 589, "Mandarin")
+city_repository.save(city1)
+
+city2 = City ("Boston", 1630, "English" )
+city_repository.save(city2)
+
+country1 = Country ("China", 1400000000, "temperate-tropical-arid" )
+country_repository.save(country1)
+
+country2 = Country ("USA", 329500000, "temperate-arid-tundra" )
+country_repository.save(country2)
