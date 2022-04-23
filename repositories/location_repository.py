@@ -55,26 +55,26 @@ def update(location):
     values = values = [location.country.id, location.city.id, location.continent, location.highlight, location.id]
     run_sql(sql, values)
 
-def dream_users(location):
-    users = []
+# def dream_users(location):
+#     users = []
 
-    sql = "SELECT users.* FROM users INNER JOIN dream_locations ON dream_locations.user_id = users.id WHERE location_id = %s"
-    values = [location.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT users.* FROM users INNER JOIN dream_locations ON dream_locations.user_id = users.id WHERE location_id = %s"
+#     values = [location.id]
+#     results = run_sql(sql, values)
 
-    for result in results:
-        user = User(result['name'], result['id'])
-        users.append(user)
-    return users
+#     for result in results:
+#         user = User(result['name'], result['id'])
+#         users.append(user)
+#     return users
 
-def visited_users(location):
-    users = []
+# def visited_users(location):
+#     users = []
 
-    sql = "SELECT users.* FROM users INNER JOIN visited_locations ON visited_locations.user_id = users.id WHERE location_id = %s"
-    values = [location.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT users.* FROM users INNER JOIN visited_locations ON visited_locations.user_id = users.id WHERE location_id = %s"
+#     values = [location.id]
+#     results = run_sql(sql, values)
 
-    for result in results:
-        user = User(result['name'], result['id'])
-        users.append(user)
-    return users
+#     for result in results:
+#         user = User(result['name'], result['id'])
+#         users.append(user)
+#     return users
