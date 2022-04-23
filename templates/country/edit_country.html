@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Country</h2>
+
+<form action="/countries" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{country.name}}">
+    </div>
+    <div>
+        <label for="population">Population:</label>
+        <input type="number" id="population" name="population" value="{{country.population}}">
+    </div>
+    <div>
+        <label for="climate">Climate:</label>
+        <input type="text" id="climate" name="climate" value="{{country.climate}}">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

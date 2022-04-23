@@ -22,30 +22,32 @@ def new_city():
 @cities_blueprint.route("/cities", methods=["POST"])
 def create_city():
     name = request.form["name"]
-    language = request.form["language"]
     founded = request.form["founded"]
-    new_city = City(name, language, founded)
+    language = request.form["language"]
+    new_city = City(name, founded, language)
     city_repository.save(new_city)
     return redirect("/cities")
 
 
-# # EDIT
-# @zombie_types_blueprint.route("/zombietypes/<id>/edit")
-# def edit_zombie_type(id):
-#     zombie_type = zombie_type_repository.select(id)
-#     return render_template('zombie_types/edit.html', zombie_type=zombie_type)
+# EDIT
+@cities_blueprint.route("/cities/<id>/edit")
+def edit_cities(id):
+    city = city_repository.select(id)
+    return render_template('city/edit_city.html', city=city)
 
 
-# # UPDATE
-# @zombie_types_blueprint.route("/zombietypes/<id>", methods=["POST"])
-# def update_zombie(id):
-#     name = request.form["name"]
-#     zombie_type = ZombieType(name, id)
-#     zombie_type_repository.update(zombie_type)
+# UPDATE
+@cities_blueprint.route("/cities/<id>", methods=["POST"])
+def update_city(id):
+    name = request.form["name"]
+    founded = request.form["founded"]
+    language = request.form["language"]
+    new_city = City(name, founded, language, id)
+    city_repository.update(new_city)
 
 
-# # DELETE
-# @zombie_types_blueprint.route("/zombietypes/<id>/delete", methods=["POST"])
-# def delete_zombie(id):
-#     zombie_type_repository.delete(id)
-#     return redirect("/zombietypes")
+# DELETE
+@cities_blueprint.route("/cities/<id>/delete", methods=["POST"])
+def delete_city(id):
+    city_repository.delete(id)
+    return redirect("/cities")

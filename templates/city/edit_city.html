@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Add a New City</h2>
+<h2>Update a City</h2>
 
 <form action="/cities" method="POST">
     <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="{{city.name}}">
     </div>
     <div>
         <label for="language">Language:</label>
-        <input type="text" id="language" name="language">
+        <input type="text" id="language" name="language" value="{{city.language}}">
     </div>
     <div>
         <label for="founded">Founded:</label>
-        <input type="number" id="founded" name="founded">
+        <input type="number" id="founded" name="founded" value="{{city.founded}}">
     </div>
     <div>
         <input type="submit">

@@ -30,6 +30,9 @@ city_repository.save(city1)
 city2 = City ("Boston", 1630, "English" )
 city_repository.save(city2)
 
+city3 = City("Bristol", 988, "English")
+city_repository.save(city3)
+
 country1 = Country ("China", 1400000000, "temperate-tropical-arid" )
 country_repository.save(country1)
 
