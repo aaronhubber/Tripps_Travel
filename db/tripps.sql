@@ -29,7 +29,7 @@ CREATE TABLE locations (
     city_id INT REFERENCES cities(id),
     country_id INT REFERENCES countries(id),
     continent VARCHAR(255),
-    highlight TEXT
+    highlight VARCHAR(255)
 );
 
 CREATE TABLE dream_locations(

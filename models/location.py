@@ -6,3 +6,4 @@ class Location:
         self.continent = continent
         self.highlight = highlight
         self.id = id
+
