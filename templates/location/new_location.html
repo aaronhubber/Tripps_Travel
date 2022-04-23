@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Location</h2>
+
+<form action="/locations" method="POST">
+    <div>
+        <label for="country">Country:</label>
+        <select name="country_id" id="country">
+            {% for country in countries %}
+            <option value="{{ country.id }}">
+                {{ country.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <select name="city_id" id="city">
+            {% for city in cities %}
+            <option value="{{ city.id }}">
+                {{ city.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="continent">Continent:</label>
+        <input type="text" id="continent" name="continent">
+    </div>
+    <div>
+        <label for="highlight">Highlight:</label>
+        <input type="text" id="highlight" name="highlight">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

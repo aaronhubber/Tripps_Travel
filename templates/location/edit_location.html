@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Location</h2>
+
+<form action="/locations" method="POST">
+    <div>
+        <label for="country">Countries:</label>
+        <select name="country_id" id="country">
+            {% for country in countries %}
+            <option value="{{ country.id }}" {% if country.id == location.country.id %} selected {% endif %}>
+                {{ country.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <select name="city_id" id="city">
+            {% for city in cities %}
+            <option value="{{ city.id }}" {% if city.id == location.city.id %} selected {% endif %}>
+                {{ city.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="continent">Continent:</label>
+        <input type="text" id="continent" name="continent" value="{{location.continent}}">
+    </div>
+    <div>
+        <label for="highlight">Highlight:</label>
+        <input type="text" id="highlight" name="highlight" value="{{location.highlight}}">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
