@@ -34,3 +34,4 @@ location_repository.save(location1)
 location2 = Location (country2, city2, "North America", "Quincy Market")
 location_repository.save(location2)
 
+print (location_repository.select(1))
