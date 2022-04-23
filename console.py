@@ -27,3 +27,10 @@ country_repository.save(country1)
 
 country2 = Country ("USA", 329500000, "temperate-arid-tundra" )
 country_repository.save(country2)
+
+location1 = Location (country1, city1, "Asia", "West Lake")
+location_repository.save(location1)
+
+location2 = Location (country2, city2, "North America", "Quincy Market")
+location_repository.save(location2)
+
