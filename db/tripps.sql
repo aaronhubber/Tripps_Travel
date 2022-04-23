@@ -32,14 +32,14 @@ CREATE TABLE locations (
     highlight TEXT
 );
 
-CREATE TABLE visited_locations (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id),
-    locations_id INT REFERENCES locations(id)
-);
-
 CREATE TABLE dream_locations(
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
-    locations_id INT REFERENCES locations(id)
+    location_id INT REFERENCES locations(id)
+);
+
+CREATE TABLE visited_locations (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id),
+    location_id INT REFERENCES locations(id)
 );

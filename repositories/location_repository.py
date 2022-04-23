@@ -6,6 +6,8 @@ from models.dream_location import Dream_location
 from models.visited_location import Visited_location
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
+from models.user import User
+import repositories.user_repository as user_repository
 
 def save(location):
     sql = "INSERT INTO locations (country_id, city_id, continent, highlight) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -53,3 +55,26 @@ def update(location):
     values = values = [location.country.id, location.city.id, location.continent, location.highlight, location.id]
     run_sql(sql, values)
 
+def dream_users(location):
+    users = []
+
+    sql = "SELECT users.* FROM users INNER JOIN dream_locations ON dream_locations.user_id = users.id WHERE location_id = %s"
+    values = [location.id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        user = User(result['name'], result['id'])
+        users.append(user)
+    return users
+
+def visited_users(location):
+    users = []
+
+    sql = "SELECT users.* FROM users INNER JOIN visited_locations ON visited_locations.user_id = users.id WHERE location_id = %s"
+    values = [location.id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        user = User(result['name'], result['id'])
+        users.append(user)
+    return users

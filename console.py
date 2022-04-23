@@ -16,6 +16,14 @@ import repositories.city_repository as city_repository
 from models.country import Country
 import repositories.country_repository as country_repository
 
+
+dream_location_repository.delete_all()
+visited_location_repository.delete_all()
+user_repository.delete_all()
+location_repository.delete_all()
+city_repository.delete_all()
+country_repository.delete_all()
+
 city1 = City("Hangzhou", 589, "Mandarin")
 city_repository.save(city1)
 
@@ -34,4 +42,16 @@ location_repository.save(location1)
 location2 = Location (country2, city2, "North America", "Quincy Market")
 location_repository.save(location2)
 
-print (location_repository.select(1))
+user1 = User ("Will Jones")
+user_repository.save(user1)
+user2 = User ("Chalrie Day")
+user_repository.save(user2)
+
+dream_location1 = Dream_location(user1, location1)
+dream_location_repository.save(dream_location1)
+
+dream_location2 = Dream_location (user2, location2)
+dream_location_repository.save(dream_location2)
+
+print (user_repository.dream_locations(user1))
+#print(location_repository.dream_users(location1))
