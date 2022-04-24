@@ -56,5 +56,11 @@ dream_location_repository.save(dream_location1)
 dream_location2 = Dream_location (user2, location2)
 dream_location_repository.save(dream_location2)
 
+visited_location1 = Visited_location(user1, location1)
+visited_location_repository.save(visited_location1)
+
+visited_location2 = Visited_location (user2, location2)
+visited_location_repository.save(visited_location2)
+
 # print (user_repository.dream_locations(user1))
 #print(location_repository.dream_users(location1))

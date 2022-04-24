@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Dream Locations</h2>
+
+{% for dream_location in dream_locations %}
+
+<section>
+    <p>{{ dream_location.user }} wants to vist {{ dream_location.location.city }}, {{dream_location.location.country}}</p>
+    <a href="/dream_locations/{{ dream_location.id }}/edit">Edit</a>
+    <form action="/dream_locations/{{ dream_location.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}
