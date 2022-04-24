@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Trips-Travel Planner</title>
 </head>
-<body>
-    <main class="flex flex--row">
+<body class="site_background">
+    <main>
+      <header class="header">
         <nav>
+          <a href="default" class="logo">Tripps</a>
           <ul>
             <li>
               <a href="/">Home</a>
@@ -34,10 +37,12 @@
           </li>
           </ul>
         </nav>
+      </header>
         <section id="content">
             {% block content %}
             {% endblock%}
         </section>
+      
     </main>
 </body>
 </html>

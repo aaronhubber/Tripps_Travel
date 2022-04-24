@@ -1,0 +1,39 @@
+.site_background {
+    background-image: url("background.jpeg");
+    padding: 5px;
+}
+
+.header{
+    overflow: hidden;
+    background-color: blueviolet;
+    padding: 20px 10px;
+    opacity: 0.8;
+}
+
+/* Style the header links */
+.header li {
+    float: left;
+    color: rgb(216, 8, 8);
+    text-align:start;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    list-style: none;
+  }
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(54, 8, 97);
+  }
+
+.intro{
+    flex-wrap: wrap;
+    width: 50%;
+}
+ 
+.menu{
+    list-style:circle;
+}

@@ -2,6 +2,10 @@
 {% block content %}
 
 <h2>Countries</h2>
+<ul>    
+    <li><a href="/countries/new">Add Country</a></li>
+</ul>
+
 
 {% for country in countries %}
 
@@ -15,6 +19,7 @@
         <input type="submit" value="Delete">
     </form>
 </section>
+
 
 {% endfor %}
 {% endblock %}

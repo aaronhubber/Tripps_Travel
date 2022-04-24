@@ -24,7 +24,7 @@ def select_all():
     for result in results:
         country = country_repository.select(result["country_id"])
         city = city_repository.select(result["city_id"])
-        location = Location(country, city, result["continent"], ["highlight"], result["id"])
+        location = Location(country, city, result["continent"], result["highlight"], result["id"])
         locations.append(location)
     return locations
 

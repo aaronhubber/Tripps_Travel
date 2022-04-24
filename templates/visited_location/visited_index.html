@@ -3,10 +3,14 @@
 
 <h2>Visited Locations</h2>
 
+<ul>    
+    <li><a href="/visited_locations/new">Add Location</a></li>
+</ul>
+
 {% for visited_location in visited_locations %}
 
 <section>
-    <p>{{ visited_location.user }} has been to {{ visited_location.location.city }}, {{visited_location.location.country}}</p>
+    <p>{{ visited_location.user.name }} has been to {{ visited_location.location.city.name }}, {{visited_location.location.country.name}}</p>
     <a href="/visited_locations/{{ visited_location.id }}/edit">Edit</a>
     <form action="/visited_locations/{{ visited_location.id }}/delete" method="POST">
         <input type="submit" value="Delete">

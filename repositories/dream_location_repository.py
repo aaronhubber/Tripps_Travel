@@ -27,28 +27,28 @@ def select_all():
     return dream_locations
 
 
-def select(id):
-    sql = "SELECT * FROM dream_locations WHERE id = %s"
-    values = [id]
-    result = run_sql(sql, values)[0]
-    user = user_repository.select(result["user_id"])
-    location = location_repository.select(result["location_id"])
-    dream_location = Dream_location(user, location, result["id"])
-    return dream_location
+# def select(id):
+#     sql = "SELECT * FROM dream_locations WHERE id = %s"
+#     values = [id]
+#     result = run_sql(sql, values)[0]
+#     user = user_repository.select(result["user_id"])
+#     location = location_repository.select(result["location_id"])
+#     dream_location = Dream_location(user, location, result["id"])
+#     return dream_location
 
 
-def delete_all():
-    sql = "DELETE FROM dream_locations"
-    run_sql(sql)
+# def delete_all():
+#     sql = "DELETE FROM dream_locations"
+#     run_sql(sql)
 
 
-def delete(id):
-    sql = "DELETE FROM dream_locations WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
+# def delete(id):
+#     sql = "DELETE FROM dream_locations WHERE id = %s"
+#     values = [id]
+#     run_sql(sql, values)
 
 
-def update(dream_location):
-    sql = "UPDATE dream_locations SET (user_id, location_id) VALUES (%s, %s)"
-    values = values = [dream_location.user.id, dream_location.location.id, dream_location.id]
-    run_sql(sql, values)
+# def update(dream_location):
+#     sql = "UPDATE dream_locations SET (user_id, location_id) VALUES (%s, %s)"
+#     values = values = [dream_location.user.id, dream_location.location.id, dream_location.id]
+#     run_sql(sql, values)
