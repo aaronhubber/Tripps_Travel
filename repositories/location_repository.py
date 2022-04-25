@@ -10,8 +10,8 @@ from models.user import User
 import repositories.user_repository as user_repository
 
 def save(location):
-    sql = "INSERT INTO locations (country_id, city_id, continent, highlight) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [location.country.id, location.city.id, location.continent, location.highlight]
+    sql = "INSERT INTO locations (country_id, city_id, continent) VALUES (%s, %s, %s) RETURNING id"
+    values = [location.country.id, location.city.id, location.continent]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
@@ -24,7 +24,7 @@ def select_all():
     for result in results:
         country = country_repository.select(result["country_id"])
         city = city_repository.select(result["city_id"])
-        location = Location(country, city, result["continent"], result["highlight"], result["id"])
+        location = Location(country, city, result["continent"], result["id"])
         locations.append(location)
     return locations
 
@@ -35,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     country = country_repository.select(result["country_id"])
     city = city_repository.select(result["city_id"])
-    location = Location(country, city, result["continent"], ["highlight"], result["id"])
+    location = Location(country, city, result["continent"], result["id"])
     return location
 
 
@@ -51,8 +51,8 @@ def delete(id):
 
 
 def update(location):
-    sql = "UPDATE locations SET (country_id, city_id, continent, highlight) VALUES (%s, %s, %s, %s)"
-    values = values = [location.country.id, location.city.id, location.continent, location.highlight, location.id]
+    sql = "UPDATE locations SET (country_id, city_id, continent) VALUES (%s, %s, %s)"
+    values = values = [location.country.id, location.city.id, location.continent, location.id]
     run_sql(sql, values)
 
 # def dream_users(location):

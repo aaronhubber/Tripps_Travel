@@ -40,6 +40,7 @@ def update_user(id):
     name = request.form["name"]
     new_user = User(name, id)
     user_repository.update(new_user)
+    return redirect ("/users")
 
 
 # DELETE

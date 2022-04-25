@@ -10,7 +10,6 @@
     background: linear-gradient(to bottom, #a12dbe, #f4e7f5);
 }
 
-/* Style the header links */
 .header li {
     float: left;
     color: rgb(216, 8, 8);
@@ -36,4 +35,6 @@
  
 .menu{
     list-style:circle;
+
 }
+

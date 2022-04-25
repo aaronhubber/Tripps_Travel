@@ -3,18 +3,20 @@
 
 <h2>Add a New City</h2>
 
-<form action="/cities" method="POST">
+<form action="/cities/new" method="POST">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
     </div>
     <div>
-        <label for="language">Language:</label>
-        <input type="text" id="language" name="language">
+        <label for="founded">Founded:</label>
+        <input type="text" id="founded" name="founded">
     </div>
     <div>
-        <label for="founded">Founded:</label>
-        <input type="number" id="founded" name="founded">
+        <label for="climate">Climate:</label>
+        <input type="radio" id="climate" name="climate" value="arid"><lable for="arid">Arid</lable>
+        <input type="radio" id="climate" name="climate" value="temperate"><lable for="temperate">Temperate</lable>
+        <input type="radio" id="climate" name="climate" value="tropical"><lable for="tropical">Tropical</lable>
     </div>
     <div>
         <input type="submit">

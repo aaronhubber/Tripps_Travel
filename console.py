@@ -24,7 +24,7 @@ location_repository.delete_all()
 city_repository.delete_all()
 country_repository.delete_all()
 
-city1 = City("Hangzhou", 589, "Mandarin")
+city1 = City("Hangzhou", 589, "")
 city_repository.save(city1)
 
 city2 = City ("Boston", 1630, "English" )
@@ -33,16 +33,16 @@ city_repository.save(city2)
 city3 = City("Bristol", 988, "English")
 city_repository.save(city3)
 
-country1 = Country ("China", 1400000000, "temperate-tropical-arid" )
+country1 = Country ("China", 1400000000 )
 country_repository.save(country1)
 
-country2 = Country ("USA", 329500000, "temperate-arid-tundra" )
+country2 = Country ("USA", 329500000 )
 country_repository.save(country2)
 
-location1 = Location (country1, city1, "Asia", "West Lake")
+location1 = Location (country1, city1, "Asia")
 location_repository.save(location1)
 
-location2 = Location (country2, city2, "North America", "Quincy Market")
+location2 = Location (country2, city2, "North America")
 location_repository.save(location2)
 
 user1 = User ("Will Jones")

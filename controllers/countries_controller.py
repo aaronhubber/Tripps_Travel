@@ -23,8 +23,7 @@ def new_country():
 def create_country():
     name = request.form["name"]
     population = request.form["population"]
-    climate = request.form["climate"]
-    new_country = Country(name, population, climate)
+    new_country = Country(name, population)
     country_repository.save(new_country)
     return redirect("/countries")
 
@@ -41,8 +40,7 @@ def edit_countries(id):
 def update_country(id):
     name = request.form["name"]
     population = request.form["population"]
-    climate = request.form["climate"]
-    new_country = Country(name, population, climate, id)
+    new_country = Country(name, population, id)
     country_repository.update(new_country)
     return redirect ("/countries")
 

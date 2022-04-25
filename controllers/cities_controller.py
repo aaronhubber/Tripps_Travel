@@ -23,8 +23,8 @@ def new_city():
 def create_city():
     name = request.form["name"]
     founded = request.form["founded"]
-    language = request.form["language"]
-    new_city = City(name, founded, language)
+    climate = request.form["climate"]
+    new_city = City(name, founded, climate)
     city_repository.save(new_city)
     return redirect("/cities")
 
@@ -41,9 +41,11 @@ def edit_cities(id):
 def update_city(id):
     name = request.form["name"]
     founded = request.form["founded"]
-    language = request.form["language"]
-    new_city = City(name, founded, language, id)
+    climate = request.form["climate"]
+    new_city = City(name, founded, climate, id)
     city_repository.update(new_city)
+    return redirect ("/cities")
+
 
 
 # DELETE

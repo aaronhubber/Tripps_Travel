@@ -12,7 +12,6 @@
 <section>
     <p>{{ country.name }}</p>
     <p>{{ country.population }}</p>
-    <p>{{ country.climate }}</p>
     
     <a href="/countries/{{ country.id }}/edit">Edit</a>
     <form action="/countries/{{ country.id }}/delete" method="POST">

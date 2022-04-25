@@ -14,14 +14,13 @@ CREATE TABLE cities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     founded INT NOT NULL,
-    language VARCHAR (255)
+    climate VARCHAR (255)
 );
 
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    population INT NOT NULL,
-    climate VARCHAR (255)
+    population INT NOT NULL
 );
 
 CREATE TABLE locations (

@@ -30,10 +30,9 @@ def create_location():
     country_id = request.form["country_id"]
     city_id = request.form["city_id"]
     continent = request.form["continent"]
-    highlight = request.form["highlight"]
     country = country_repository.select(country_id)
     city = city_repository.select(city_id)
-    location = Location(country, city, continent, highlight)
+    location = Location(country, city, continent)
     location_repository.save(location)
     return redirect("/locations")
 
@@ -51,10 +50,9 @@ def update_locations(id):
     country_id = request.form["country_id"]
     city_id = request.form["city_id"]
     continent = request.form["continent"]
-    highlight = request.form["highlight"]
     country = country_repository.select(country_id)
     city = city_repository.select(city_id)
-    location = Location(country, city, continent, highlight, id)
+    location = Location(country, city, continent, id)
     location_repository.update(location)
     return redirect("/locations")
 

@@ -13,7 +13,6 @@
     <p>{{ location.city.name }}</p>
     <p>{{ location.country.name }}</p>
     <p>{{ location.continent }}</p>
-    <p>{{ location.highlight }}</p>
     <a href="/locations/{{ location.id }}/edit">Edit</a>
     <form action="/locations/{{ location.id }}/delete" method="POST">
         <input type="submit" value="Delete">

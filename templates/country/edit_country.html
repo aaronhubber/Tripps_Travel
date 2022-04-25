@@ -3,7 +3,7 @@
 
 <h2>Update a Country</h2>
 
-<form action="/countries" method="POST">
+<form action="/countries/{{country.id}}" method="POST">
     <div>
         <label for="country">Country</label>
         
@@ -137,7 +137,7 @@
                 <option value="Lithuania">Lithuania</option>
                 <option value="Luxembourg">Luxembourg</option>
                 <option value="Macao">Macao</option>
-                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="North Macedonia, The Former Yugoslav Republic of">North Macedonia, The Former Yugoslav Republic of</option>
                 <option value="Madagascar">Madagascar</option>
                 <option value="Malawi">Malawi</option>
                 <option value="Malaysia">Malaysia</option>
@@ -258,12 +258,7 @@
         <label for="population">Population in millions:</label>
         <input type="number" id="population" name="population" value="{{country.population}}">
     </div>
-    <div>
-        <label for="climate">Climate:</label>
-        <input type="radio" id="climate" name="climate" value="arid"><lable for="arid">Arid</lable>
-        <input type="radio" id="climate" name="climate" value="temperate"><lable for="temperate">Temperate</lable>
-        <input type="radio" id="climate" name="climate" value="tropical"><lable for="tropical">Tropical</lable>
-    </div>
+
     <div>
         <button type="submit">Update Country</button>
 
