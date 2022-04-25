@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %}
 {% block content %}
 
 <h2>Dream Locations</h2>
@@ -11,14 +11,8 @@
 
 <section>
     <p>{{ dream_location.user.name }} wants to vist {{ dream_location.location.city.name }}, {{dream_location.location.country.name}}</p>
-    <a href="/dream_locations/{{ dream_location.id }}/edit">Edit</a>
-    <form action="/dream_locations/{{ dream_location.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-    <a href="/dream_locations/{{ dream_location.id }}/move">Move</a>
-
-    </form>
+    <a href="/visited_locations/{{ dream_location.id }}/move">Move</a>
 </section>
 
 {% endfor %}
-{% endblock %}
+{% endblock %} -->

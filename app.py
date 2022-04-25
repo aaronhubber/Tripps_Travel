@@ -16,9 +16,16 @@ app.register_blueprint(locations_blueprint)
 app.register_blueprint(cities_blueprint)
 app.register_blueprint(countries_blueprint)
 
+
+
+
 @app.route("/")
 def main():
     return render_template('index.html')
+
+# @app.route("/search", methods=["POST"])
+# def search():
+#     pass
 
 if __name__ == '__main__':
     app.run()

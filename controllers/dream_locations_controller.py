@@ -1,12 +1,15 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+from controllers.visited_locations_controller import visited_location
 from models.dream_location import Dream_location
 from models.location import Location
 from models.user import User
+from models.visited_location import Visited_location
 import repositories.user_repository as user_repository
 import repositories.location_repository as location_repository
 import repositories.dream_location_repository as dream_location_repository
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
+import repositories.visited_location_repository as visited_locations_repository
 
 dream_locations_blueprint = Blueprint("dream_locations", __name__)
 
@@ -57,3 +60,12 @@ def update_location(id):
 def delete_dream(id):
     dream_location_repository.delete(id)
     return redirect("/dream_locations")
+
+# #MOVE
+# @dream_locations_blueprint.route("/dream_locations/<id>/move")
+# def move_location(id):
+#     dream_location = dream_location_repository.select(id)
+#     visited_location = visited_locations_repository.select(id)
+#     users = user_repository.select_all()
+#     locations = location_repository.select_all()
+#     return render_template('dream_location/move.html', visited_location= visited_location, dream_location=dream_location, users=users, locations=locations)
