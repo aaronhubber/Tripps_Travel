@@ -1,6 +1,5 @@
 class City:
-    def __init__(self, name, founded, climate, id=None,):
+    def __init__(self, name, climate, id=None,):
         self.name = name
-        self.founded = founded
         self.climate = climate
         self.id = id

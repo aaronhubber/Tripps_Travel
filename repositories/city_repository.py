@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.city import City
 
 def save(city):
-    sql = "INSERT INTO cities (name, founded, climate) VALUES (%s, %s, %s) RETURNING id"
-    values = [city.name, city.founded, city.climate]
+    sql = "INSERT INTO cities (name, climate) VALUES (%s, %s) RETURNING id"
+    values = [city.name, city.climate]
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id
@@ -14,7 +14,7 @@ def select_all():
     sql = "SELECT * FROM cities"
     results = run_sql(sql)
     for result in results:
-        city = City(result["name"],result["founded"],result["climate"], result["id"])
+        city = City(result["name"],result["climate"], result["id"])
         cities.append(city)
     return cities
 
@@ -23,7 +23,7 @@ def select(id):
     sql = "SELECT * FROM cities WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    city = City(result["name"],result["founded"],result["climate"], result["id"])
+    city = City(result["name"],result["climate"], result["id"])
     return city
 
 
@@ -39,6 +39,6 @@ def delete(id):
 
 
 def update(city):
-    sql = "UPDATE cities SET (name, founded, climate) = (%s, %s,%s) WHERE id = %s"
-    values =[city.name, city.founded, city.climate, city.id]
+    sql = "UPDATE cities SET (name, climate) = (%s,%s) WHERE id = %s"
+    values =[city.name,  city.climate, city.id]
     run_sql(sql, values)

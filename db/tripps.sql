@@ -13,7 +13,6 @@ CREATE TABLE users (
 CREATE TABLE cities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    founded INT NOT NULL,
     climate VARCHAR (255)
 );
 

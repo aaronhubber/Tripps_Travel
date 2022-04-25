@@ -22,9 +22,8 @@ def new_city():
 @cities_blueprint.route("/cities", methods=["POST"])
 def create_city():
     name = request.form["name"]
-    founded = request.form["founded"]
     climate = request.form["climate"]
-    new_city = City(name, founded, climate)
+    new_city = City(name, climate)
     city_repository.save(new_city)
     return redirect("/cities")
 
@@ -40,9 +39,8 @@ def edit_cities(id):
 @cities_blueprint.route("/cities/<id>", methods=["POST"])
 def update_city(id):
     name = request.form["name"]
-    founded = request.form["founded"]
     climate = request.form["climate"]
-    new_city = City(name, founded, climate, id)
+    new_city = City(name, climate, id)
     city_repository.update(new_city)
     return redirect ("/cities")
 

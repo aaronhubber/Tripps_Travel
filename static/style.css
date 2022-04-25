@@ -35,6 +35,14 @@
  
 .menu{
     list-style:circle;
-
 }
+
+p {
+    width: 50%;
+    overflow: hidden;
+    background-color: blueviolet;
+    padding: 3px 3px;
+    background: linear-gradient(to bottom, #a12dbe, #f4e7f5);
+}
+
 
