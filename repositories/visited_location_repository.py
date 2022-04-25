@@ -49,6 +49,6 @@ def delete(id):
 
 
 def update(visited_location):
-    sql = "UPDATE visited_locations SET (user_id, location_id) VALUES (%s, %s)"
+    sql = "UPDATE visited_locations SET (user_id, location_id) VALUES (%s, %s) WHERE id = %s"
     values = values = [visited_location.user.id, visited_location.location.id, visited_location.id]
     run_sql(sql, values)
