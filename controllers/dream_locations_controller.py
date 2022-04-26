@@ -1,14 +1,10 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 from controllers.visited_locations_controller import visited_location
-from models.location import Location
-from models.user import User
 from models.experience import Experience
 import repositories.user_repository as user_repository
 import repositories.location_repository as location_repository
 import repositories.dream_location_repository as dream_location_repository
-import repositories.city_repository as city_repository
-import repositories.country_repository as country_repository
-import repositories.visited_location_repository as visited_locations_repository
+
 
 dream_locations_blueprint = Blueprint("dream_locations", __name__)
 
