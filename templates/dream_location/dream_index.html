@@ -9,8 +9,8 @@
 
 {% for dream_location in dream_locations %}
 
-<section>
-    <p>{{ dream_location.user.name }} wants to vist {{ dream_location.location.city.name }}, {{dream_location.location.country.name}}</p>
+<section class="results">
+    <p>{{ dream_location.user.name }} wants to vist {{ dream_location.location.city.name }}, {{dream_location.location.country.name}}. </p>
     <a href="/dream_locations/{{ dream_location.id }}/edit">Edit</a>
     <form action="/dream_locations/{{ dream_location.id }}/delete" method="POST">
         <input type="submit" value="Delete">

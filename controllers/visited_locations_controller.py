@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from models.visited_location import Visited_location
+from models.experience import Experience
 from models.location import Location
 from models.user import User
 import repositories.user_repository as user_repository
@@ -13,6 +13,11 @@ visited_locations_blueprint = Blueprint("visited_locations", __name__)
 @visited_locations_blueprint.route ("/visited_locations")
 def visited():
     visited_locations = visited_location_repository.select_all()
+    return render_template("visited_location/visited_index.html", visited_locations=visited_locations)
+
+@visited_locations_blueprint.route ("/visited_locations/<id>/select")
+def select_by_user(id):
+    visited_locations = visited_location_repository.select_location_by_user_id(id)
     return render_template("visited_location/visited_index.html", visited_locations=visited_locations)
 
 # NEW
@@ -29,7 +34,7 @@ def create_visit():
     location_id = request.form["location_id"]
     user = user_repository.select(user_id)
     location = location_repository.select(location_id)
-    new_visited = Visited_location(user, location)
+    new_visited = Experience(user, location)
     visited_location_repository.save(new_visited)
     return redirect("/visited_locations")
 
@@ -48,7 +53,7 @@ def visited_location(id):
     location_id = request.form["location_id"]
     user = user_repository.select(user_id)
     location = location_repository.select(location_id)
-    update_visited = Visited_location(user, location, id)
+    update_visited = Experience(user, location, id)
     visited_location_repository.save(update_visited)
     return redirect("/visited_locations")
 

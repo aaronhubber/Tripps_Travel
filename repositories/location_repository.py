@@ -2,8 +2,7 @@ from db.run_sql import run_sql
 from models.location import Location
 from models.city import City
 from models.country import Country
-from models.dream_location import Dream_location
-from models.visited_location import Visited_location
+from models.experience import Experience
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 from models.user import User

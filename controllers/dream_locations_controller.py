@@ -1,9 +1,8 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 from controllers.visited_locations_controller import visited_location
-from models.dream_location import Dream_location
 from models.location import Location
 from models.user import User
-from models.visited_location import Visited_location
+from models.experience import Experience
 import repositories.user_repository as user_repository
 import repositories.location_repository as location_repository
 import repositories.dream_location_repository as dream_location_repository
@@ -32,7 +31,7 @@ def create_dream():
     location_id = request.form["location_id"]
     user = user_repository.select(user_id)
     location = location_repository.select(location_id)
-    new_dream = Dream_location(user, location)
+    new_dream = Experience(user, location)
     dream_location_repository.save(new_dream)
     return redirect("/dream_locations")
 
@@ -51,7 +50,7 @@ def update_location(id):
     location_id = request.form["location_id"]
     user = user_repository.select(user_id)
     location = location_repository.select(location_id)
-    update_dream = Dream_location(user, location, id)
+    update_dream = Experience(user, location, id)
     dream_location_repository.save(update_dream)
     return redirect("/dream_locations")
 
@@ -61,11 +60,11 @@ def delete_dream(id):
     dream_location_repository.delete(id)
     return redirect("/dream_locations")
 
-# #MOVE
-# @dream_locations_blueprint.route("/dream_locations/<id>/move")
-# def move_location(id):
-#     dream_location = dream_location_repository.select(id)
-#     visited_location = visited_locations_repository.select(id)
-#     users = user_repository.select_all()
-#     locations = location_repository.select_all()
-#     return render_template('dream_location/move.html', visited_location= visited_location, dream_location=dream_location, users=users, locations=locations)
+#MOVE
+@dream_locations_blueprint.route("/dream_locations/<id>/move")
+def move_location(id):
+    
+    experience = dream_location_repository.select(id)
+    dream_location_repository.move_specific(experience)
+    
+    return render_template('dream_location/move.html', experience=experience)

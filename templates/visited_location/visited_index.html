@@ -9,11 +9,14 @@
 
 {% for visited_location in visited_locations %}
 
-<section class="visted_bio">
-    <p>{{ visited_location.user.name }} has been to {{ visited_location.location.city.name }}, {{visited_location.location.country.name}}. In the city of {{visited_location.location.city.name}} the climate is {{visited_location.location.city.climate}} and {{visited_location.location.country.name}} can be found on the continent of {{visited_location.location.continent}}.</p>
+<section class="results">
+    <p class="visted_bio"><b>{{ visited_location.user.name }} </b> has been to {{ visited_location.location.city.name }}, {{visited_location.location.country.name}}. In the city of {{visited_location.location.city.name}} the climate is {{visited_location.location.city.climate}} and {{visited_location.location.country.name}} can be found on the continent of {{visited_location.location.continent}}.</p>
     <a href="/visited_locations/{{ visited_location.id }}/edit">Edit</a>
     <form action="/visited_locations/{{ visited_location.id }}/delete" method="POST">
         <input type="submit" value="Delete">
+    </form>
+    <form action="/visited_locations/{{ visited_location.id }}/select" method="POST">
+        <input type="submit" value="Select">
     </form>
 </section>
 

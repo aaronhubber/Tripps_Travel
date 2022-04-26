@@ -1,7 +1,7 @@
-from models.dream_location import Dream_location
+from models.dream_location import Experience
 import repositories.dream_location_repository as dream_location_repository
 
-from models.visited_location import Visited_location
+from models.experience import Experience
 import repositories.visited_location_repository as visited_location_repository
 
 from models.user import User
@@ -50,16 +50,16 @@ user_repository.save(user1)
 user2 = User ("Charlie Day")
 user_repository.save(user2)
 
-dream_location1 = Dream_location(user1, location1)
+dream_location1 = Experience(user1, location1)
 dream_location_repository.save(dream_location1)
 
-dream_location2 = Dream_location (user2, location2)
+dream_location2 = Experience (user2, location2)
 dream_location_repository.save(dream_location2)
 
-visited_location1 = Visited_location(user1, location1)
+visited_location1 = Experience(user1, location1)
 visited_location_repository.save(visited_location1)
 
-visited_location2 = Visited_location (user2, location2)
+visited_location2 = Experience (user2, location2)
 visited_location_repository.save(visited_location2)
 
 # print (user_repository.dream_locations(user1))

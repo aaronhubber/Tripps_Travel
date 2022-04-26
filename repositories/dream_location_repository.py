@@ -1,11 +1,13 @@
+
 from db.run_sql import run_sql
+
 from models.location import Location
-from models.user import User
-from models.location import Location
-from models.dream_location import Dream_location
-from models.visited_location import Visited_location
+from models.experience import Experience
+
 import repositories.user_repository as user_repository
 import repositories.location_repository as location_repository
+import repositories.visited_location_repository as visited_location_repository
+
 
 def save(dream_location):
     sql = "INSERT INTO dream_locations (user_id, location_id) VALUES (%s, %s) RETURNING id"
@@ -22,7 +24,7 @@ def select_all():
     for result in results:
         user = user_repository.select(result["user_id"])
         location = location_repository.select(result["location_id"])
-        dream_location = Dream_location(user, location, result["id"])
+        dream_location = Experience(user, location, result["id"])
         dream_locations.append(dream_location)
     return dream_locations
 
@@ -33,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     user = user_repository.select(result["user_id"])
     location = location_repository.select(result["location_id"])
-    dream_location = Dream_location(user, location, result["id"])
+    dream_location = Experience(user, location, result["id"])
     return dream_location
 
 
@@ -46,6 +48,10 @@ def delete(id):
     sql = "DELETE FROM dream_locations WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def move_specific(experience):
+    delete(experience.id)
+    visited_location_repository.save(experience)
 
 
 def update(dream_location):

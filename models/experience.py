@@ -1,4 +1,4 @@
-class Dream_location:
+class Experience:
 
     def __init__(self, user, location, id=None):
         self.user = user
