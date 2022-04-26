@@ -5,8 +5,8 @@
 
 .header{
     overflow: hidden;
-    background-color: blueviolet;
     padding: 20px 10px;
+    height: 100px;
     background: linear-gradient(to bottom, #a12dbe, #f4e7f5);
 }
 
@@ -16,14 +16,14 @@
     text-align:start;
     padding: 5px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 25px;
     border-radius: 4px;
     list-style: none;
   }
 
 .header a.logo {
-    font-size: 25px;
+    font-size: 36px;
     font-weight: bold;
     color: rgb(54, 8, 97);
   }
@@ -38,15 +38,24 @@
 }
 
 .container{
-    display: flex;
-    flex-direction: row;
-    flex-basis: 30%;
-    flex-wrap: wrap;
+    max-width: 80%;
+    display: inline-block;
 }
 
 .results{
-    background-color: aquamarine;
-    border-style: dotted;
+    display:inline-block;
+    width: 250px;
+    height:max-content;
+    padding: 10px;
+    margin: 10px;
+    font-size: x-large;
+    border-style: double;
+    border-width: 6px;
+    border-color: #a12dbe;
+    background: linear-gradient(to bottom, #f9f3fb, #880e91);
 }
 
+.addnew{
+    font-size:x-large;
 
+}

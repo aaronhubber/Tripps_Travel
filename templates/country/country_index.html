@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Countries</h2>
+<h2 class="addnew">Countries</h2>
 <ul>    
-    <li><a href="/countries/new">Add Country</a></li>
+    <li class="addnew"><a href="/countries/new">Add Country</a></li>
 </ul>
 
-
+<div class="container">
 {% for country in countries %}
 
-<section class="results"></section>>
-    <p>{{ country.name }}</p>
-    <p>{{ country.population }}</p>
+<section class="results">
+    <p>Country Name: {{ country.name }}</p>
+    <p>Founded in {{ country.population }} AD</p>
 
     
     <a href="/countries/{{ country.id }}/edit">Edit</a>
@@ -19,6 +19,7 @@
         <input type="submit" value="Delete">
     </form>
 </section>
+</div>
 
 
 {% endfor %}

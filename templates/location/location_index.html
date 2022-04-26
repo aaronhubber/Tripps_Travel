@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Locations</h2>
+<h2 class="addnew">Locations</h2>
 
 <ul>    
-    <li><a href="/locations/new">Add Location - Don't forget to add the city and country first. </a></li>
+    <li class="addnew"><a href="/locations/new">Add Location - Don't forget to add the city and country first. </a></li>
 </ul>
-
+<div class="container">
 {% for location in locations %}
 
-<section class="results"></section>>
-    <p>{{ location.city.name }}</p>
-    <p>{{ location.country.name }}</p>
-    <p>{{ location.continent }}</p>
+<section class="results">
+    <p>City: {{ location.city.name }}</p>
+    <p>Country: {{ location.country.name }}</p>
+    <p>Continent: {{ location.continent }}</p>
     <a href="/locations/{{ location.id }}/edit">Edit</a>
     <form action="/locations/{{ location.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>
 </section>
-
+</div>
 {% endfor %}
 {% endblock %}
