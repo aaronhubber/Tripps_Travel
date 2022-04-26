@@ -1,6 +1,5 @@
 .site_background {
     background-image: url("background.jpeg");
-    padding: 5px;
 }
 
 .header{
@@ -62,15 +61,19 @@
 }
 
 .footer{
-   text-align:center;
-   height:max-content;
-   background: linear-gradient(to bottom, #f9f3fb, #880e91);
+  text-align:center;
+  height:max-content;
+  background: linear-gradient(to bottom, #f9f3fb, #880e91);
+  position:fixed;
+  bottom:0;
+  width:100%;
+  margin: 0px;
 }
 
 .mainhome{
   text-align: center;
   display:inline-block;
-  width: 250px;
+  width: 550px;
   height:max-content;
   padding: 10px;
   margin: 10px;
@@ -79,12 +82,9 @@
   border-width: 6px;
   border-color: #a12dbe;
   background: linear-gradient(to bottom, #f9f3fb, #880e91);
+  list-style: none;
 }
 
-.mainhome > ul{
-  list-style: none;
-  background-color: #f9f3fb;
-}
 
 .map{
   align-items: center;
@@ -94,4 +94,24 @@ button:hover {
   color: #0062FF;
   border: #0062FF solid 1px;
   background: #FFFF99;
+  }
+
+body{
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+.hp  {
+  float: right;    
+   margin: 0 0 0 15px;
+   width: 620px;
+   height:2400px;
+   padding:7px;
+   margin: 7px;
+   border-style: double;
+   border-width: 6px;
+   border-color: #a12dbe;
   }
