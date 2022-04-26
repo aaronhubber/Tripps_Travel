@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Visited Locations</h2>
+<h2 class="addnew">Visited Locations</h2>
 
 <ul>    
-    <li><a href="/visited_locations/new">Add Location</a></li>
+    <li class="addnew"><a href="/visited_locations/new">Add Location</a></li>
 </ul>
 
 {% for visited_location in visited_locations %}

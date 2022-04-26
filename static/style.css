@@ -8,6 +8,8 @@
     padding: 20px 10px;
     height: 100px;
     background: linear-gradient(to bottom, #a12dbe, #f4e7f5);
+    border-style:groove ;
+    border: 5px black;
 }
 
 .header li {
@@ -57,5 +59,39 @@
 
 .addnew{
     font-size:x-large;
-
 }
+
+.footer{
+   text-align:center;
+   height:max-content;
+   background: linear-gradient(to bottom, #f9f3fb, #880e91);
+}
+
+.mainhome{
+  text-align: center;
+  display:inline-block;
+  width: 250px;
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: #a12dbe;
+  background: linear-gradient(to bottom, #f9f3fb, #880e91);
+}
+
+.mainhome > ul{
+  list-style: none;
+  background-color: #f9f3fb;
+}
+
+.map{
+  align-items: center;
+}
+
+button:hover {
+  color: #0062FF;
+  border: #0062FF solid 1px;
+  background: #FFFF99;
+  }

@@ -1,4 +1,4 @@
-from models.dream_location import Experience
+from models.experience import Experience
 import repositories.dream_location_repository as dream_location_repository
 
 from models.experience import Experience

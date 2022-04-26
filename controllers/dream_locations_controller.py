@@ -67,4 +67,4 @@ def move_location(id):
     experience = dream_location_repository.select(id)
     dream_location_repository.move_specific(experience)
     
-    return render_template('dream_location/move.html', experience=experience)
+    return redirect("/dream_locations")
