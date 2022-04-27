@@ -24,6 +24,23 @@
         <input type="submit">
     </div>
 </form>
+<h2>Show by Location</h2>
+
+<form action="/visited_locations/filter/location" method="POST">
+    <div>
+        <label for="location">Location:</label>
+        <select name="location_id" id="location">
+            <option selected disabled>Select Location</option>
+            {% for location in locations %}
+            <option value="{{ user.id }}">
+                {{ location.name }}
+            </option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit">
+    </div>
+</form>
 
 {% for visited_location in visited_locations %}
 

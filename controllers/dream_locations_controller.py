@@ -20,6 +20,14 @@ def new_dream():
     locations = location_repository.select_all()
     return render_template("dream_location/new_dream.html", users=users, locations=locations)
 
+#display by users
+@dream_locations_blueprint.route ("/dream_locations/filter/user", methods = ["POST"])
+def display_user():
+    user_id = request.form["user_id"]
+    users = user_repository.select_all()
+    dream_locations=dream_location_repository.select_locations_by_user_id(user_id)
+    return render_template ("dream_location/dream_index.html", users=users, dream_locations=dream_locations)
+
 # CREATE
 @dream_locations_blueprint.route("/dream_locations", methods=["POST"])
 def create_dream():

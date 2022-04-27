@@ -40,6 +40,18 @@ def select_locations_by_user_id(id):
         visited_locations.append(visited_location)
     return visited_locations
 
+def select_locations_by_location_id(id):
+    sql = "SELECT * FROM visited_locations WHERE location_id = %s"
+    visited_locations = []
+    values = [id]
+    results = run_sql(sql, values)
+    for result in results:
+        user = user_repository.select(result["user_id"])
+        location = location_repository.select(result["location_id"])
+        visited_location = Experience(user, location, result["id"])
+        visited_locations.append(visited_location)
+    return visited_locations
+
 
 
 def select(id):

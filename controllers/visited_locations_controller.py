@@ -23,7 +23,15 @@ def display_user():
     user_id = request.form["user_id"]
     users = user_repository.select_all()
     visited_locations=visited_location_repository.select_locations_by_user_id(user_id)
-    return render_template ("visited_location/visited_index.html", users= users, visited_locations=visited_locations)
+    return render_template ("visited_location/visited_index.html", users=users, visited_locations=visited_locations)
+
+#display by locations
+@visited_locations_blueprint.route ("/visited_locations/filter/location", methods = ["POST"])
+def display_location():
+    location_id = request.form["location_id"]
+    locations = location_repository.select_all()
+    visited_locations=visited_location_repository.select_locations_by_location_id(location_id)
+    return render_template ("visited_location/visited_index.html", locations=locations, visited_locations=visited_locations)
 
 
 

@@ -1,5 +1,5 @@
 .site_background {
-    background-image: url("background.jpeg");
+    background-image: url("static/images/newbg.jpeg");
 }
 .header{
     padding: 20px 10px;
@@ -28,17 +28,7 @@
 
 }
 
-.intro{
-    flex-wrap: wrap;
-    width: 50%;
-}
- 
-.menu{
-    list-style:circle;
-}
-
 .container{
-    max-width: 80%;
     display: inline-block;
 }
 
@@ -69,7 +59,7 @@
   margin: 0px;
 }
 
-.mainhome{
+/* .mainhome{
   text-align: center;
   display:inline-block;
   width: 55%;
@@ -81,13 +71,10 @@
   border-width: 6px;
   border-color: #250791;
   background: linear-gradient(to right, #f9f3fb, #067fd0);
-  list-style: none;
+  list-style: none; */
 }
 
 
-.map{
-  align-items: center;
-}
 
 button:hover {
   color: #0062FF;
@@ -102,18 +89,6 @@ body{
 ul{
   list-style: none;
 }
-
-.hp  {
-  float: right;    
-   margin: 0 0 0 15px;
-   width: 400px;
-   height:2400px;
-   padding:7px;
-   margin: 7px;
-   border-style: double;
-   border-width: 6px;
-   border-color: #562dbe;
-  }
 
   input[type=submit] {
     padding:5px 15px; 
@@ -146,4 +121,32 @@ a:active {
   color: yellow;
   background-color: transparent;
   text-decoration: underline;
+}
+
+.indexcontainer >a{
+  color: red;
+}
+
+.index_container{
+  display: flex;
+  flex-flow: column wrap;
+  align-items:center;
+  font-size: x-large;
+
+}
+.first{
+  flex:0 1 auto;
+  width: 75%;
+}
+.image{
+  flex:auto;
+  align-self: center;
+}
+.image2{
+
+  align-self: flex-start;
+}
+.image3{
+
+  align-self: flex-end;
 }

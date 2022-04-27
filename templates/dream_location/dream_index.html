@@ -7,6 +7,24 @@
     <li class="addnew"><a href="/dream_locations/new">Add Location</a></li>
 </ul>
 
+<h2>Show by User</h2>
+
+<form action="/dream_locations/filter/user" method="POST">
+    <div>
+        <label for="user">User:</label>
+        <select name="user_id" id="user">
+            <option selected disabled>Select User</option>
+            {% for user in users %}
+            <option value="{{ user.id }}">
+                {{ user.name }}
+            </option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit">
+    </div>
+</form>
+
 {% for dream_location in dream_locations %}
 
 <section class="results">
