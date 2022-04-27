@@ -7,6 +7,7 @@
     <div>
         <label for="user">User:</label>
         <select name="user_id" id="user">
+            <option selected disabled>Select User</option>
             {% for user in users %}
             <option value="{{ user.id }}">
                 {{ user.name }}
@@ -17,6 +18,7 @@
     <div>
         <label for="location">Location:</label>
         <select name="location_id" id="location">
+            <option selected disabled>Select Location</option>
             {% for location in locations %}
             <option value="{{ location.id }}">
                 {{ location.city.name }}

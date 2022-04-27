@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Trips-Travel Planner</title>
 </head>
-<body class="site_background">
+<header class="site_background">
     <nav>
       <header class="header">
         <nav>
-          <a href="default" class="logo">Tripps</a>
-          <ul>
+          <img src="static/logo.jpeg" alt="logo" class="logo">
+          
+          <ul class="navright">
             <li>
               <a href="/">Home</a>
             </li>
@@ -36,7 +37,6 @@
             <a href="/dream_locations">Dream</a>
           </li>
           </ul>
-
         </nav>
       </header>
         <section id="content">
@@ -49,5 +49,5 @@
           <a href="mailto:johnsemail@gmail.com">Email</a>
           <a href="https://github.com/aaronhubber">Github</a></p>
     </footer>
-</body>
+  </header>
 </html>

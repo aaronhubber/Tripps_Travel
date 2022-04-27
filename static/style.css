@@ -1,33 +1,32 @@
 .site_background {
     background-image: url("background.jpeg");
 }
-
 .header{
-    overflow: hidden;
     padding: 20px 10px;
-    height: 100px;
-    background: linear-gradient(to bottom, #a12dbe, #f4e7f5);
-    border-style:groove ;
-    border: 5px black;
+    height:fit-content;
+    background: linear-gradient(to left, #f9f3fb, #067fd0);
+    border-bottom: 10px thick black;
 }
 
 .header li {
     float: left;
-    color: rgb(216, 8, 8);
     text-align:start;
     padding: 5px;
     text-decoration: none;
-    font-size: 28px;
-    line-height: 25px;
+    font-size: 20px;
+    line-height: 22px;
     border-radius: 4px;
     list-style: none;
   }
+.navright{
+  float:right;
+}
+.logo{
+  height: 100px;
+  width: 300px;
+  border-style: groove;
 
-.header a.logo {
-    font-size: 36px;
-    font-weight: bold;
-    color: rgb(54, 8, 97);
-  }
+}
 
 .intro{
     flex-wrap: wrap;
@@ -52,8 +51,8 @@
     font-size: x-large;
     border-style: double;
     border-width: 6px;
-    border-color: #a12dbe;
-    background: linear-gradient(to bottom, #f9f3fb, #880e91);
+    border-color: #060ba4;
+    background: linear-gradient(to right, #f9f3fb, #067fd0);
 }
 
 .addnew{
@@ -63,9 +62,9 @@
 .footer{
   text-align:center;
   height:max-content;
-  background: linear-gradient(to bottom, #f9f3fb, #880e91);
-  position:fixed;
-  bottom:0;
+  background: linear-gradient(to right, #f9f3fb, #067fd0);
+  position:relative;
+  height: 40px;
   width:100%;
   margin: 0px;
 }
@@ -73,15 +72,15 @@
 .mainhome{
   text-align: center;
   display:inline-block;
-  width: 550px;
+  width: 55%;
   height:max-content;
   padding: 10px;
   margin: 10px;
   font-size: x-large;
   border-style: double;
   border-width: 6px;
-  border-color: #a12dbe;
-  background: linear-gradient(to bottom, #f9f3fb, #880e91);
+  border-color: #250791;
+  background: linear-gradient(to right, #f9f3fb, #067fd0);
   list-style: none;
 }
 
@@ -107,11 +106,44 @@ ul{
 .hp  {
   float: right;    
    margin: 0 0 0 15px;
-   width: 620px;
+   width: 400px;
    height:2400px;
    padding:7px;
    margin: 7px;
    border-style: double;
    border-width: 6px;
-   border-color: #a12dbe;
+   border-color: #562dbe;
   }
+
+  input[type=submit] {
+    padding:5px 15px; 
+    background:rgb(228, 225, 225); 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+a:link {
+  color: rgb(4, 6, 4);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(3, 10, 80);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(81, 83, 85);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}

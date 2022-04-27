@@ -7,9 +7,10 @@
     <div>
         <label for="country">Countries:</label>
         <select name="country_id" id="country">
+            <option selected disabled>Select Country</option>
             {% for country in countries %}
             <option value="{{ country.id }}" {% if country.id == location.country.id %} selected {% endif %}>
-                {{ country.name }}
+            {{ country.name }}
             </option>
             {% endfor %}
         </select>
@@ -17,16 +18,25 @@
     <div>
         <label for="city">City:</label>
         <select name="city_id" id="city">
+            <option selected disabled>Select City</option>
             {% for city in cities %}
             <option value="{{ city.id }}" {% if city.id == location.city.id %} selected {% endif %}>
-                {{ city.name }}
+            {{ city.name }}
             </option>
             {% endfor %}
         </select>
     </div>
     <div>
-        <label for="continent">Continent:</label>
-        <input type="text" id="continent" name="continent" value="{{location.continent}}">
+        <label for="continent">Continent</label>
+        
+            <select id="continent" name="continent" class="form-control">
+                <option selected disabled>Select Continent</option>
+                <option value="Africa">Africa</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Oceania">Oceania</option>
     </div>
     <div>
         <input type="submit">

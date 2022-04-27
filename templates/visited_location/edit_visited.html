@@ -7,6 +7,7 @@
     <div>
         <label for="user">User:</label>
         <select name="user_id" id="user">
+            <option selected disabled>Select User</option>
             {% for user in users %}
             <option value="{{ user.id }}" {% if user.id == visited_location.user.id %} selected {% endif %}>
                 {{ user.name }}
@@ -17,6 +18,7 @@
     <div>
         <label for="location">Location:</label>
         <select name="location_id" id="location">
+            <option selected disabled>Select Location</option>
             {% for location in locations %}
             <option value="{{ location.id }}" {% if location.id == visited_location.location.id %} selected {% endif %}>
                 {{ location.name }}
