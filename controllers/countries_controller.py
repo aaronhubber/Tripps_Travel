@@ -50,3 +50,10 @@ def update_country(id):
 def delete_country(id):
     country_repository.delete(id)
     return redirect("/countries")
+
+# # SHOW
+# @countries_blueprint.route("/countries/<id>")
+# def show_city(id):
+#     cities = country_repository.select_cities_of_countries(id)
+#     countries = country_repository.select(id)
+#     return render_template("countries/show.html", cities=cities, countries=countries)

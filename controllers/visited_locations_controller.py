@@ -9,16 +9,24 @@ import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
 visited_locations_blueprint = Blueprint("visited_locations", __name__)
-
+#INDEX
 @visited_locations_blueprint.route ("/visited_locations")
 def visited():
+    users = user_repository.select_all()
     visited_locations = visited_location_repository.select_all()
-    return render_template("visited_location/visited_index.html", visited_locations=visited_locations)
+    return render_template("visited_location/visited_index.html",users=users, visited_locations=visited_locations)
 
-@visited_locations_blueprint.route ("/visited_locations/<id>/select")
-def select_by_user(id):
-    visited_locations = visited_location_repository.select_location_by_user_id(id)
-    return render_template("visited_location/visited_index.html", visited_locations=visited_locations)
+
+#display by users
+@visited_locations_blueprint.route ("/visited_locations/filter/user", methods = ["POST"])
+def display_user():
+    user_id = request.form["user_id"]
+    users = user_repository.select_all()
+    visited_locations=visited_location_repository.select_locations_by_user_id(user_id)
+    return render_template ("visited_location/visited_index.html", users= users, visited_locations=visited_locations)
+
+
+
 
 # NEW
 @visited_locations_blueprint.route("/visited_locations/new")
@@ -54,7 +62,7 @@ def visited_location(id):
     user = user_repository.select(user_id)
     location = location_repository.select(location_id)
     update_visited = Experience(user, location, id)
-    visited_location_repository.save(update_visited)
+    visited_location_repository.update(update_visited)
     return redirect("/visited_locations")
 
 # DELETE

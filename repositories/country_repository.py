@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.country import Country
+from models.city import City
 
 def save(country):
     sql = "INSERT INTO countries (name, population) VALUES (%s, %s) RETURNING id"
@@ -42,3 +43,13 @@ def update(country):
     sql = "UPDATE countries SET (name, population) = (%s, %s) WHERE id = %s"
     values =[country.name, country.population, country.id]
     run_sql(sql, values)
+
+# def select_cities_of_countries(id):
+#     cities = []
+#     sql = "SELECT cities.* FROM cities INNER JOIN locations ON locations.city_id = cities.id WHERE locations.country_id = %s"
+#     values = [id]
+#     results = run_sql(sql, values)
+#     for result in results:
+#         city = City(result["name"], results["climate"])
+#         cities.append(city)
+#     return cities

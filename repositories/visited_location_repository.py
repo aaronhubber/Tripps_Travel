@@ -26,15 +26,19 @@ def select_all():
         visited_location = Experience(user, location, result["id"])
         visited_locations.append(visited_location)
     return visited_locations
+    
 
-def select_location_by_user_id(id):
+def select_locations_by_user_id(id):
     sql = "SELECT * FROM visited_locations WHERE user_id = %s"
+    visited_locations = []
     values = [id]
-    result = run_sql(sql, values)[0]
-    user = user_repository.select(result["user_id"])
-    location = location_repository.select(result["location_id"])
-    visited_location = Experience(user, location, result["id"])
-    return visited_location
+    results = run_sql(sql, values)
+    for result in results:
+        user = user_repository.select(result["user_id"])
+        location = location_repository.select(result["location_id"])
+        visited_location = Experience(user, location, result["id"])
+        visited_locations.append(visited_location)
+    return visited_locations
 
 
 
@@ -61,5 +65,5 @@ def delete(id):
 
 def update(visited_location):
     sql = "UPDATE visited_locations SET (user_id, location_id) VALUES (%s, %s) WHERE id = %s"
-    values = values = [visited_location.user.id, visited_location.location.id, visited_location.id]
+    values = [visited_location.user.id, visited_location.location.id, visited_location.id]
     run_sql(sql, values)
