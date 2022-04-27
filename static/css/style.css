@@ -1,10 +1,13 @@
-.site_background {
-    background-image: url("static/images/newbg.jpeg");
+body {
+  background-image: url(images/newbg.jpeg);
+  background-size: cover ;
+  margin:0;
+  background-color: #cef1cb;
 }
 .header{
     padding: 20px 10px;
     height:fit-content;
-    background: linear-gradient(to left, #f9f3fb, #067fd0);
+    background: linear-gradient(to left, #a4ea8e, rgb(64, 186, 82));
     border-bottom: 10px thick black;
 }
 
@@ -41,8 +44,8 @@
     font-size: x-large;
     border-style: double;
     border-width: 6px;
-    border-color: #060ba4;
-    background: linear-gradient(to right, #f9f3fb, #067fd0);
+    border-color: rgb(6, 64, 14);
+    background-color:rgb(216, 231, 226);
 }
 
 .addnew{
@@ -52,7 +55,7 @@
 .footer{
   text-align:center;
   height:max-content;
-  background: linear-gradient(to right, #f9f3fb, #067fd0);
+  background: linear-gradient(to right, #d5f1c4, #137e09);
   position:relative;
   height: 40px;
   width:100%;
@@ -72,7 +75,6 @@
   border-color: #250791;
   background: linear-gradient(to right, #f9f3fb, #067fd0);
   list-style: none; */
-}
 
 
 
@@ -137,16 +139,60 @@ a:active {
 .first{
   flex:0 1 auto;
   width: 75%;
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(6, 64, 14);
+  background-color:rgb(216, 231, 226);
 }
 .image{
   flex:auto;
   align-self: center;
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(6, 64, 14);
+  background-color:rgb(216, 231, 226);
 }
 .image2{
 
   align-self: flex-start;
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(6, 64, 14);
+  background-color:rgb(216, 231, 226);
+  width: 50%;
 }
 .image3{
 
   align-self: flex-end;
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(6, 64, 14);
+  background-color:rgb(216, 231, 226);
+}
+
+.boxes{
+  height:max-content;
+  padding: 10px;
+  margin: 10px;
+  font-size: x-large;
+  border-style: double;
+  border-width: 6px;
+  border-color: #060ba4;
+  background: linear-gradient(to right, #ca9c13, #e65e15);
 }
