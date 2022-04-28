@@ -44,29 +44,3 @@ def update(user):
     values = [user.name, user.id]
     run_sql(sql, values) 
 
-def dream_locations(user):
-    locations = []
-
-    sql = "SELECT locations.* FROM locations INNER JOIN dream_locations ON dream_location.location_id = locations.id WHERE user_id = %s"
-    values = [user.id]
-    results = run_sql(sql, values)
-
-    for result in results:
-        location = Location (result['country'], result['city'], result['continent'], result['highlight'], result['id'] )
-        locations.append(location)
-
-    return locations
-
-
-# def visited_locations(user):
-#     locations = []
-
-#     sql = "SELECT locations.* FROM locations INNER JOIN visited_locations ON visited_location.location_id = locations.id WHERE user_id = %s"
-#     values = [user.id]
-#     results = run_sql(sql, values)
-
-#     for result in results:
-#         location = Location (result['country'], result['city'], result['continent'], result['highlight'], result['id'] )
-#         locations.append(location)
-
-#     return locations

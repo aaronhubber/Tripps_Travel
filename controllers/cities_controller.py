@@ -1,8 +1,6 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-
 from models.city import City
 import repositories.city_repository as city_repository
-
 cities_blueprint = Blueprint("cities", __name__)
 
 # INDEX
@@ -11,12 +9,10 @@ def city():
     cities = city_repository.select_all()
     return render_template("city/city_index.html", cities=cities)
 
-
 #NEW
 @cities_blueprint.route("/cities/new")
 def new_city():
     return render_template("city/new_city.html")
-
 
 # CREATE
 @cities_blueprint.route("/cities", methods=["POST"])
@@ -27,13 +23,11 @@ def create_city():
     city_repository.save(new_city)
     return redirect("/cities")
 
-
 # EDIT
 @cities_blueprint.route("/cities/<id>/edit")
 def edit_cities(id):
     city = city_repository.select(id)
     return render_template('city/edit_city.html', city=city)
-
 
 # UPDATE
 @cities_blueprint.route("/cities/<id>", methods=["POST"])
@@ -43,8 +37,6 @@ def update_city(id):
     new_city = City(name, climate, id)
     city_repository.update(new_city)
     return redirect ("/cities")
-
-
 
 # DELETE
 @cities_blueprint.route("/cities/<id>/delete", methods=["POST"])

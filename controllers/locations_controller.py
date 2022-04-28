@@ -1,15 +1,8 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from controllers.cities_controller import city
-
 from models.location import Location
 import repositories.location_repository as location_repository
-
-from models.country import Country
 import repositories.country_repository as country_repository
-
-from models.city import City
 import repositories.city_repository as city_repository
-
 locations_blueprint = Blueprint("locations", __name__)
 
 @locations_blueprint.route ("/locations")

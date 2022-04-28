@@ -6,14 +6,13 @@ body {
 }
 .header{
     padding: 20px 10px;
-    height:fit-content;
+    height:max-content;
     background: linear-gradient(to left, #a4ea8e, rgb(64, 186, 82));
     border-bottom: 10px thick black;
 }
 
 .header li {
     float: left;
-    text-align:start;
     padding: 5px;
     text-decoration: none;
     font-size: 20px;

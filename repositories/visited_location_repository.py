@@ -1,8 +1,4 @@
 from db.run_sql import run_sql
-from models.location import Location
-from models.user import User
-from models.location import Location
-
 from models.experience import Experience
 import repositories.user_repository as user_repository
 import repositories.location_repository as location_repository
