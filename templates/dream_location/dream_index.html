@@ -3,9 +3,10 @@
 
 <h2 class="addnew">Dream Locations</h2>
 
-<ul>    
-    <li class="addnew"><a href="/dream_locations/new">Add Location</a></li>
-</ul>
+    <form action="/dream_locations/new">
+        <input type="submit" value="Add Location"/>
+    </form>
+
 
 <h2>Show by User</h2>
 
@@ -17,6 +18,24 @@
             {% for user in users %}
             <option value="{{ user.id }}">
                 {{ user.name }}
+            </option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit">
+    </div>
+</form>
+
+<h2>Show by Location</h2>
+
+<form action="/visited_locations/filter/location" method="POST">
+    <div>
+        <label for="location">Location:</label>
+        <select name="location_id" id="location">
+            <option selected disabled>Select Location</option>
+            {% for location in locations %}
+            <option value="{{ user.id }}">
+                {{ location.name }}
             </option>
             {% endfor %}
         </select>

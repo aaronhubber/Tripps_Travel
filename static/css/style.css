@@ -147,6 +147,7 @@ a:active {
   border-width: 6px;
   border-color: rgb(6, 64, 14);
   background-color:rgb(216, 231, 226);
+  text-align: center;
 }
 .image{
   flex:auto;

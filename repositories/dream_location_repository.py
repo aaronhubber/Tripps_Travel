@@ -59,7 +59,7 @@ def update(dream_location):
     values = values = [dream_location.user.id, dream_location.location.id, dream_location.id]
     run_sql(sql, values)
 
-def select_locations_by_user_id(id):
+def select_dream_locations_by_user_id(id):
     sql = "SELECT * FROM dream_locations WHERE user_id = %s"
     dream_locations = []
     values = [id]

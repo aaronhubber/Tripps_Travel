@@ -6,9 +6,9 @@
 
 <h1 class="addnew">Cities</h2>
 
-<ul>    
-    <li class="addnew"><a href="/cities/new"><b>Add a City</b></a></li>
-</ul>
+    <form action="/cities/new">
+        <input type="submit" value="Add City"/>
+    </form>
 
 <div class="container">
 {% for city in cities %}

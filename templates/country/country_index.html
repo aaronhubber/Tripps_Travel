@@ -2,9 +2,9 @@
 {% block content %}
 
 <h2 class="addnew">Countries</h2>
-<ul>    
-    <li class="addnew"><a href="/countries/new">Add Country</a></li>
-</ul>
+<form action="/countries/new">
+    <input type="submit" value="Add Country"/>
+</form>
 
 <div class="container">
 {% for country in countries %}

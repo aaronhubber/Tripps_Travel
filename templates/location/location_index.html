@@ -3,9 +3,10 @@
 
 <h2 class="addnew">Locations</h2>
 
-<ul>    
-    <li class="addnew"><a href="/locations/new">Add Location - Don't forget to add the city and country first. </a></li>
-</ul>
+<form action="/locations/new">
+    <input type="submit" value="Add Location"/>
+</form>
+
 <div class="container">
 {% for location in locations %}
 

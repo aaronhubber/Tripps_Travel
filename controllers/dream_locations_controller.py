@@ -22,10 +22,10 @@ def new_dream():
 
 #display by users
 @dream_locations_blueprint.route ("/dream_locations/filter/user", methods = ["POST"])
-def display_user():
+def display_dream_user():
     user_id = request.form["user_id"]
     users = user_repository.select_all()
-    dream_locations=dream_location_repository.select_locations_by_user_id(user_id)
+    dream_locations=dream_location_repository.select_dream_locations_by_user_id(user_id)
     return render_template ("dream_location/dream_index.html", users=users, dream_locations=dream_locations)
 
 # CREATE
